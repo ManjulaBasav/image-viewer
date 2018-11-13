@@ -12,4 +12,9 @@
     width:40%;
 }
 
-
+.dispNone {
+    display: none;
+}
+ .dispBlock {
+    display: block;
+}

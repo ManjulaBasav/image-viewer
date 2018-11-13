@@ -19,6 +19,8 @@ class Login extends Component {
             username: "",
             passwordRequired: "dispNone",
             password: "",
+            loginErrorMsg : "dispNone",
+            loginSuccess : true
         };
     }
     inputUsernameChangeHandler = (e) => {
@@ -26,6 +28,35 @@ class Login extends Component {
     }
     inputPasswordChangeHandler = (e) => {
         this.setState({ password: e.target.value });
+    }
+
+    loginClickHandler = (e) => {
+        let username = "upgrad";
+        let password = "upgrad";
+        let accessToken = "access-token";
+        if(this.state.username === "" || this.state.password === ""){
+        this.state.username === "" ? this.setState({ usernameRequired: "dispBlock" }) : this.setState({ usernameRequired: "dispNone" });
+        this.state.password === "" ? this.setState({ passwordRequired: "dispBlock" }) : this.setState({ passwordRequired: "dispNone" });
+        this.setState({ loginErrorMsg: "dispNone" })
+
+        return;
+        }
+        {
+        if((this.state.username === username) && (this.state.password === password)){
+            this.setState({loginSuccess: true});
+            this.setState({ loginErrorMsg: "dispNone" })
+            this.setState({ usernameRequired: "dispNone" })
+            this.setState({ passwordRequired: "dispNone" })
+        }else{
+            this.setState({loginSuccess: false});
+            this.setState({ loginErrorMsg: "dispBlock" })
+            this.setState({ usernameRequired: "dispNone" })
+            this.setState({ passwordRequired: "dispNone" })
+            
+        }
+        
+    }
+        
     }
     render() {
         return (
@@ -57,8 +88,13 @@ class Login extends Component {
                                     <span className="red">required</span>
                                 </FormHelperText>
                         </FormControl>
-                        <br/><br/>
+                        <br/> 
+                        <FormHelperText className={this.state.loginErrorMsg}>
+                                    <span className="red">Incorrect username and/or password</span>
+                                </FormHelperText>
+                                <br/>
                         <Button variant="contained" color="primary" onClick={this.loginClickHandler}>LOGIN</Button>
+                        
                         </CardContent>
                         </Card>
                         </div>
