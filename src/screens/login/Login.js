@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../../common/header/Header';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import FormControl from '@material-ui/core/FormControl';
@@ -33,7 +32,6 @@ class Login extends Component {
     loginClickHandler = (e) => {
         let username = "upgrad";
         let password = "upgrad";
-        let accessToken = "access-token";
         if(this.state.username === "" || this.state.password === ""){
         this.state.username === "" ? this.setState({ usernameRequired: "dispBlock" }) : this.setState({ usernameRequired: "dispNone" });
         this.state.password === "" ? this.setState({ passwordRequired: "dispBlock" }) : this.setState({ passwordRequired: "dispNone" });
@@ -47,6 +45,9 @@ class Login extends Component {
             this.setState({ loginErrorMsg: "dispNone" })
             this.setState({ usernameRequired: "dispNone" })
             this.setState({ passwordRequired: "dispNone" })
+            sessionStorage.setItem("access-token","9165329256.bb36ab3.03c5a2fee77f4477ad348f28d132215e");
+            this.props.history.push("/home");
+
         }else{
             this.setState({loginSuccess: false});
             this.setState({ loginErrorMsg: "dispBlock" })
@@ -58,11 +59,12 @@ class Login extends Component {
     }
         
     }
+    /*https://api.instagram.com/v1/users/self/?access_token=9165329256.bb36ab3.03c5a2fee77f4477ad348f28d132215e*/
     render() {
         return (
             <div>
-                
-                <Header />
+                        
+
                 <div  >
                     <Card className="content">
                             <CardContent >

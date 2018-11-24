@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from './screens/login/Login';
+
+import Main from './screens/Main';
+
 import 'typeface-roboto';
 ReactDOM.render(
-    <Login/>, 
+    <Main/>, 
     document.getElementById('root')
 );

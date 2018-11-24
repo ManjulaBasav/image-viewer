@@ -7,5 +7,59 @@
     float: left;
     color: #fff;
     font-size: 20px;
+    vertical-align: middle;
+    justify-content: center;
     text-align: center;
     } 
+
+    .app-logo {
+        top:0;
+        right: 0;
+        vertical-align: middle;
+        padding:0px;
+        justify-content: flex-end;
+        float:right;
+        border-radius: 50%;
+    }
+
+    .avatar {
+        vertical-align: middle;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    .iconSearch{
+        color: black;
+        top:0;
+        padding:0px;
+    }
+
+    .right{
+        flex-direction: column;
+        float:right
+    }
+    .searchField{
+        border-radius: 4px;
+        width: 300px;
+        background-color: #c0c0c0;
+        align-content: center;
+        float: left;
+        margin-right:10px;
+        justify-content: flex-end;
+        vertical-align: middle;
+
+    }
+
+    .disp-none{
+        display: none;
+    }
+    
+    .disp-block{
+        display: block;
+    }
+
+    .menulist{
+        margin-top:10px;
+        margin-left:10px;
+    }
+    
